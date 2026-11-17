@@ -1,0 +1,153 @@
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+.scoreBox {
+  display: flex;
+  align-items: baseline;
+  flex: none;
+}
+.score {
+  font-size: 128px;
+  line-height: 1;
+  animation: dream-float 4s ease-in-out infinite;
+}
+.unit {
+  margin-left: 4px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+}
+.heroText {
+  min-width: 0;
+}
+.heroText h1 {
+  margin: 4px 0;
+  font: italic 400 30px/1.2 var(--font-dream);
+}
+.heroText p {
+  margin: 0;
+}
+.comment {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.panel,
+.block {
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.panel h2,
+.block h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+.blockHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.blockHead h2 {
+  margin: 0;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  margin-bottom: 12px;
+  border-radius: var(--radius-sm);
+  background: #0b1440;
+}
+
+.words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.words li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+.words strong {
+  font: 600 16px/1.2 var(--font-en);
+}
+.addBtn {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 111, 214, 0.3);
+  background: #fff;
+  color: var(--sky-deep);
+  font: 600 12px/1.2 var(--font);
+  cursor: pointer;
+}
+.addBtn:disabled {
+  color: var(--ink-soft);
+  background: transparent;
+  cursor: default;
+}
+
+.list {
+  margin: 0;
+  padding-left: 24px;
+}
+.list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.list li:last-child {
+  border-bottom: none;
+}
+.sentence {
+  margin: 0;
+  font: 17px/1.5 var(--font-en);
+}
+.missed {
+  padding: 0 3px;
+  border-radius: 5px;
+  background: rgba(255, 182, 207, 0.75);
+  color: #8a2448;
+}
+.ratio {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.perfect .ratio {
+  color: #b07b12;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .score {
+    font-size: 96px;
+  }
+}

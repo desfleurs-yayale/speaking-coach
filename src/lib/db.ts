@@ -45,7 +45,7 @@ export function normalizeWord(w: string): string {
   return w
     .toLowerCase()
     .replace(/[’‘]/g, "'")
-    .replace(/^[^a-z0-9']+|[^a-z0-9']+$/g, '')
+    .replace(/^[^\p{L}\p{N}']+|[^\p{L}\p{N}']+$/gu, '')
 }
 
 // ---- sessions ----

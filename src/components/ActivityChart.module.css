@@ -1,0 +1,121 @@
+.chart {
+  margin: 0;
+}
+
+.title {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.plot {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(0, 1fr));
+  height: 132px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.16); /* baseline hairline */
+  padding-top: 18px; /* room for the peak label */
+}
+
+.col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+  cursor: default;
+}
+
+.track {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bar {
+  width: min(18px, 62%);
+  background: var(--sky-deep);
+  border-radius: 4px 4px 0 0; /* rounded data end, square at the baseline */
+  transition: filter 0.15s ease;
+}
+
+.colActive .bar {
+  filter: brightness(1.18);
+}
+
+.col:focus-visible .track {
+  outline: 2px solid var(--sky-deep);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.peak {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -2px);
+  font: 600 12px/1 var(--font-en);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.tick {
+  position: absolute;
+  top: 100%;
+  margin-top: 6px;
+  font: 500 11px/1 var(--font-en);
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.today {
+  font-family: var(--font);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.tip {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: grid;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px rgba(30, 60, 120, 0.2);
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.tip strong {
+  font: 600 14px/1.2 var(--font);
+  color: var(--ink);
+}
+
+/* keep edge tooltips inside the panel */
+.tipStart {
+  left: 0;
+  transform: none;
+}
+
+.tipEnd {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
